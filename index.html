@@ -84,7 +84,7 @@
                     type: 'DELETE',
                     url: 'http://ajax-api.itheima.net/api/books/' + id,
                     success: function (res) {
-                        if (res.message !== '查询图书列表成功') return alert('查询图书列表失败')
+                        // if (res.message !== '查询图书列表成功') return alert('查询图书列表失败')
                         data()
                     }
                 })
@@ -98,6 +98,9 @@
                 let cbs = $('#bookcbs').val().trim()
             // if判断如果没值则return提示框
                 if (sm.length <= 0 || zz.length <= 0 || cbs.length <= 0) {
+                    sm = $('#bookname').val('')
+                    zz = $('#bookzz').val('')
+                    cbs = $('#bookcbs').val('')
                     return alert('请填写完整的图书信息')
                 } else {
             // 有值则post请求添加对象参数 res如果不等于添加图书成功则添加图书失败
